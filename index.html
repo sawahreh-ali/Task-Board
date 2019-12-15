@@ -12,9 +12,19 @@
         crossorigin="anonymous">
     <title>My Task Board</title>
 </head>
-<body class="container container-fluid">
-    <header>
+<body class="container">
+    <header class="mt-5">
         <img src="./imgs/title.png" alt="My Task Board">
     </header>
+    <main class="mt-5">
+        <div id="task-div">
+            <form>
+                <textarea name="task" id="task"></textarea>
+                <input type="date">
+                <input type="time">
+                <input type="submit">
+            </form>
+        </div>
+    </main>
 </body>
 </html>

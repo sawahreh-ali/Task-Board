@@ -1,3 +1,30 @@
 body {
     background-image: url('../imgs/tile.jpg');
 }
+
+header, main {
+    text-align: center;
+}
+
+#task-div {
+    background-image: url('../imgs/formbg.jpg');
+    background-position: left;
+    background-repeat: repeat-y;
+    height: 200px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form {
+    height: 100%;
+}
+
+#task {
+    background: transparent;
+    height: 80%;
+    width: 86%;
+    box-sizing: border-box;
+    margin-left: 14%;
+    font-size: large;
+    font-weight: bold;
+}
