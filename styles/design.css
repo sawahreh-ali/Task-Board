@@ -21,10 +21,14 @@ form {
 
 #task {
     background: transparent;
-    height: 80%;
+    height: 70%;
     width: 86%;
     box-sizing: border-box;
     margin-left: 14%;
     font-size: large;
     font-weight: bold;
+}
+
+label {
+    color: #007bff;
 }
