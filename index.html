@@ -18,13 +18,12 @@
     </header>
     <main class="mt-5">
         <div id="task-div">
-            <form>
-                <textarea name="task" id="task"></textarea>
-                <label for="deadline" class="badge py-1">Deadline</label>
-                <input type="datetime-local" class="btn btn-small btn-link" name="deadline">
-                <input type="submit" class="btn btn-outline-dark btn-sm">
-            </form>
+            <textarea name="task" id="task"></textarea>
+            <label for="deadline" class="badge py-1">Deadline</label>
+            <input type="datetime-local" class="btn btn-small btn-link" name="deadline" id="deadline">
+            <button id="addNoteBtn" class="btn btn-outline-dark btn-sm">Add To Task Board</button>
         </div>
     </main>
+    <script src="./scripts/main.js"></script>
 </body>
 </html>
