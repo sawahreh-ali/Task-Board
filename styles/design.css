@@ -46,14 +46,27 @@ label {
     height: 250px;
     text-align: left;
     display: inline-block;
+    float: left;
+}
+.notes:hover {
+    transform: scale(1.25, 1.25);
+    -moz-transform: scale(1.25, 1.25);
+    -ms-transform: scale(1.25, 1.25);
+    -webkit-transform: scale(1.25, 1.25);
+    -o-transform: scale(1.25, 1.25);
 }
 p {
     width: 170px;
-    height: 180px;
+    height: 160px;
     word-wrap: break-word;
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
+
 p::-webkit-scrollbar {
     display: none;
 } 
+
+p:hover, span:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
