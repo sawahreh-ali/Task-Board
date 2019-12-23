@@ -57,7 +57,7 @@ label {
 }
 p {
     width: 170px;
-    height: 160px;
+    height: 145px;
     word-wrap: break-word;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -69,4 +69,8 @@ p::-webkit-scrollbar {
 
 p:hover, span:hover {
     background-color: rgba(255, 255, 255, 0.6);
+}
+
+i {
+    float: right;
 }
