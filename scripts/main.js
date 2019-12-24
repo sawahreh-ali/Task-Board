@@ -40,14 +40,20 @@ function deleteNote(id) {
 window.onload = function() {
     if(window.localStorage.length){
         var main = document.querySelector('main');
-        for(let i = 0; i < window.localStorage.length; i++){
-            var note = JSON.parse(this.localStorage[i]);
-            main.innerHTML += ` <div class='notes py-4 px-1' id='note-${note.id}'>
+        for(let key in window.localStorage){
+            var note = JSON.parse(this.localStorage[key]);
+            if(new Date(`${note.date} ${(note.time ? note.time: '23:59')}`).getTime() > Date.now())
+            {
+                main.innerHTML += `<div class='notes py-4 px-1' id='note-${note.id}'>
                                     <i class="fas fa-times mr-4" onclick="deleteNote(${note.id})"></i>
                                     <p>${note.task}</p>
                                     <span>${note.date}</span> <br />
                                     <span>${note.time}</span>
                                 <div>`;
+            }
+            else {
+                this.localStorage.removeItem(key);
+            }
         }
     }
 };
