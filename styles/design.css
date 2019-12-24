@@ -48,7 +48,7 @@ label {
     display: inline-block;
     float: left;
 }
-.notes:hover {
+.notes:hover, i:hover {
     transform: scale(1.25, 1.25);
     -moz-transform: scale(1.25, 1.25);
     -ms-transform: scale(1.25, 1.25);
@@ -73,4 +73,9 @@ p:hover, span:hover {
 
 i {
     float: right;
+    display: none;
+}
+
+i:hover{
+    display: inline;
 }
