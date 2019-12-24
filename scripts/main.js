@@ -53,6 +53,7 @@ window.onload = function() {
                                         <span>${note.date}</span> <br />
                                         <span>${note.time}</span>
                                     <div>`;
+                    id++;
                 }
                 else {
                     this.localStorage.removeItem(key);
