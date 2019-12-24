@@ -5,16 +5,25 @@ var Note = function(task, date, time, id) {
     this.id = id;
 };
 var id = 0;
-var notes = [];
 var addNoteBtn = document.getElementById('addNoteBtn');
 function addNote(){
     let task = document.getElementById('task').value;
+    let err = document.getElementById('error');
+    if(!task) {
+        err.innerText = 'Task is required!';
+        err.hidden = false;
+        return 0;
+    }
+    else{
+        err.innerText = '';
+        err.hidden = true;
+    }
     let date = new Date(document.getElementById('deadlineDate').value).toLocaleDateString();
     let time = document.getElementById('deadlineTime').value;
     var dateTime = new Date(`${date} ${(time ? time: '23:59')}`).getTime();
     if( dateTime > Date.now()){
         let note = new Note(task, date, time, id);
-        notes.push(note);
+        // notes.push(note);
         var main = document.querySelector('main');
         main.innerHTML += ` <div class='notes py-4 px-1' id='note-${id}'>
                                 <i class="fas fa-times mr-4" onclick="deleteNote(${id})"></i>
