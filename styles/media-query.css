@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1199px) {
+    #deadlineTime{
+        margin-right: 10%;
+    }
+    #task-div{
+        height: 330px;
+    }
+  }
+  
+  @media only screen and (max-width: 991px) {
+    #deadlineTime{
+        margin-right: 30%;
+        margin-left: 30%;
+
+    }
+    #task-div{
+        height: 460px;
+    }
+  }
