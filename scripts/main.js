@@ -38,22 +38,29 @@ function deleteNote(id) {
 }
 
 window.onload = function() {
-    if(window.localStorage.length){
-        var main = document.querySelector('main');
-        for(let key in window.localStorage){
-            var note = JSON.parse(this.localStorage[key]);
-            if(new Date(`${note.date} ${(note.time ? note.time: '23:59')}`).getTime() > Date.now())
-            {
-                main.innerHTML += `<div class='notes py-4 px-1' id='note-${note.id}'>
-                                    <i class="fas fa-times mr-4" onclick="deleteNote(${note.id})"></i>
-                                    <p>${note.task}</p>
-                                    <span>${note.date}</span> <br />
-                                    <span>${note.time}</span>
-                                <div>`;
-            }
-            else {
-                this.localStorage.removeItem(key);
+    // The try was added cause unknown error was showing when iterating through localstorage,
+    // the error doesn't affect the functionality but I wanted to get rid of it. 
+    try {
+        if(window.localStorage.length){
+            var main = document.querySelector('main');
+            for(let key in window.localStorage){
+                var note = JSON.parse(this.localStorage[key]);
+                if(new Date(`${note.date} ${(note.time ? note.time: '23:59')}`).getTime() > Date.now())
+                {
+                    main.innerHTML += `<div class='notes py-4 px-1' id='note-${note.id}'>
+                                        <i class="fas fa-times mr-4" onclick="deleteNote(${note.id})"></i>
+                                        <p>${note.task}</p>
+                                        <span>${note.date}</span> <br />
+                                        <span>${note.time}</span>
+                                    <div>`;
+                }
+                else {
+                    this.localStorage.removeItem(key);
+                }
             }
         }
+    } 
+    catch(e){
+        // Do nothing
     }
 };
