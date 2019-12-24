@@ -18,10 +18,6 @@ header, main {
     margin: 0 auto;
 }
 
-form {
-    height: 100%;
-}
-
 #task {
     background: transparent;
     height: 70%;

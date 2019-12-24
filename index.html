@@ -20,10 +20,11 @@
     <main class="mt-5">
         <div id="task-div" class="mb-4">
             <textarea name="task" id="task"></textarea>
-            <label for="deadline" class="badge py-1">Deadline</label>
-            <input type="date" class="btn btn-small btn-link" name="deadlineDate" id="deadlineDate">
-            <input type="time" class="btn btn-small btn-link" name="deadlineTime" id="deadlineTime">
-            <button id="addNoteBtn" class="btn btn-outline-dark btn-sm" onclick="addNote()">Add To Task Board</button>
+            <label for="deadline" class="badge py-1 mr-3">Deadline</label>
+            <input type="date" class="btn btn-link" name="deadlineDate" id="deadlineDate">
+            <input type="time" class="btn btn-link" name="deadlineTime" id="deadlineTime">
+            <button id="addNoteBtn" class="btn btn-outline-dark btn-sm" onclick="addNote()">Add</button>
+            <button id="reset" class="btn btn-outline-dark btn-sm" onclick="reset()">Reset</button>
             <label id="error" hidden>Test</label>
         </div>
     </main>

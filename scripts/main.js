@@ -5,7 +5,6 @@ var Note = function(task, date, time, id) {
     this.id = id;
 };
 var id = 0;
-var addNoteBtn = document.getElementById('addNoteBtn');
 function addNote(){
     let task = document.getElementById('task').value;
     let err = document.getElementById('error');
@@ -49,10 +48,19 @@ function addNote(){
 
 function deleteNote(id) {
     // alert(id);
-    var index = notes.map(note => {return note.id;}).indexOf(id);
-    notes.splice(index, 1);
+    // var index = notes.map(note => {return note.id;}).indexOf(id);
+    // notes.splice(index, 1);
     localStorage.removeItem(id);
     document.getElementById(`note-${id}`).remove();
+}
+
+function reset() {
+    document.getElementById('task').value = '';
+    document.getElementById('error').value = '';
+    document.getElementById('error').hidden = true;
+    document.getElementById('deadlineDate').value = '';
+    document.getElementById('deadlineTime').value = '';
+
 }
 
 window.onload = function() {
