@@ -10,7 +10,7 @@ function addNote(){
     let task = document.getElementById('task').value;
     let err = document.getElementById('error');
     if(!task) {
-        err.innerText = 'Task is required!';
+        err.innerText = 'Task is required';
         err.hidden = false;
         return 0;
     }
@@ -19,6 +19,14 @@ function addNote(){
         err.hidden = true;
     }
     let date = new Date(document.getElementById('deadlineDate').value).toLocaleDateString();
+    if(date === 'Invalid Date') {
+        err.hidden = false;
+        err.innerText = 'Date is required';
+        return 0;
+    } else {
+        err.innerText = '';
+        err.hidden = true;
+    }
     let time = document.getElementById('deadlineTime').value;
     var dateTime = new Date(`${date} ${(time ? time: '23:59')}`).getTime();
     if( dateTime > Date.now()){
@@ -34,7 +42,8 @@ function addNote(){
         localStorage.setItem(id++, JSON.stringify(note));
     }
     else {
-        /* Validate deadline here*/ 
+        err.hidden = false;
+        err.innerText = 'Date should be future value';
     }
 }
 
